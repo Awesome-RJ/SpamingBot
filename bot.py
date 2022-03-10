@@ -91,28 +91,28 @@ async def help(event):
 
 @bot.on(events.NewMessage(pattern="^/cspam (.+)"))
 async def tmeme(e):
-    if not "kittu" in kittu:
-     await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
+    if "kittu" not in kittu:
+        await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
-          
+
     else: 
-         cspam = str(e.pattern_match.group(1))
-         message = cspam.replace(" ", "")
-         await e.delete()
-         for letter in message:
-             await e.respond(letter)
-         if EVENT_LOGS:
-             await e.reply(
-                  "#CSPAM\n" "TSpam was executed successfully"
-             )
+        cspam = str(e.pattern_match.group(1))
+        message = cspam.replace(" ", "")
+        await e.delete()
+        for letter in message:
+            await e.respond(letter)
+        if EVENT_LOGS:
+            await e.reply(
+                 "#CSPAM\n" "TSpam was executed successfully"
+            )
 
 
 @bot.on(events.NewMessage(pattern="^/wspam (.+)"))
 async def t_meme(e):
 
-    if not "kittu" in kittu:
-      await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
-    
+    if "kittu" not in kittu:
+        await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
+
     else:
         wspam = str(e.pattern_match.group(1))
         message = wspam.split()
@@ -128,17 +128,17 @@ async def t_meme(e):
 @bot.on(events.NewMessage(pattern="^/spam (\d+) (.+)"))
 async def spammer(e):
 
-    if not "kittu" in kittu:
-      await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
-    
-    if not e.sender_id == OWNER:
+    if "kittu" not in kittu:
+        await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
+
+    if e.sender_id != OWNER:
         await e.reply("Fucking mf, you're not my owner.")
-    
+
     else:
         counter = int(e.pattern_match.group(1))
         spam_message = str(e.pattern_match.group(2))
         await e.delete()
-        await asyncio.wait([e.respond(spam_message) for i in range(counter)])
+        await asyncio.wait([e.respond(spam_message) for _ in range(counter)])
         if EVENT_LOGS:
             await e.reply(
                  "#SPAM\n" "Spam was executed successfully"
@@ -148,10 +148,10 @@ async def spammer(e):
 @bot.on(events.NewMessage(pattern="^/picspam (\d+) (.+)"))
 async def tiny_pic_spam(e):
 
-    if not "kittu" in kittu:
-      await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
+    if "kittu" not in kittu:
+        await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
-    
+
     else:
         counter = int(e.pattern_match.group(1))
         link = str(e.pattern_match.group(2))
@@ -167,10 +167,10 @@ async def tiny_pic_spam(e):
 @bot.on(events.NewMessage(pattern="/delayspam (.*)"))
 async def spammer(e):
 
-    if not "kittu" in kittu:
-      await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
+    if "kittu" not in kittu:
+        await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
-    
+
     else:
         spamDelay = float(e.pattern_match.group(1).split(" ", 2)[0])
         counter = int(e.pattern_match.group(1).split(" ", 2)[1])
